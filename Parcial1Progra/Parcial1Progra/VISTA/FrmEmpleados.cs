@@ -16,5 +16,15 @@ namespace Parcial1Progra
         {
             InitializeComponent();
         }
+
+        private void dtgEmpledos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

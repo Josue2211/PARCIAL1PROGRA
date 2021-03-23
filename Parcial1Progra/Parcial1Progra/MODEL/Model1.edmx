@@ -4,52 +4,61 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="programacionModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="UserList">
+      <Schema Namespace="EmpleadosModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Tbl_empleados">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="Id_empleado" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="NombreUsuario" Type="varchar" MaxLength="50" />
-          <Property Name="Apellido" Type="varchar" MaxLength="50" />
-          <Property Name="Edad" Type="int" />
-          <Property Name="Pass" Type="varchar" MaxLength="50" />
+          <Property Name="Id_empleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Empl_nombre" Type="varchar" MaxLength="50" />
+          <Property Name="Empl_apellido" Type="varchar" MaxLength="50" />
+          <Property Name="Empl_DUI" Type="int" />
+          <Property Name="Empl_direccion" Type="varchar" MaxLength="50" />
+          <Property Name="Empl_tel" Type="int" />
+          <Property Name="Empl_email" Type="varchar" MaxLength="50" />
+          <Property Name="Empl_cargo" Type="varchar" MaxLength="50" />
         </EntityType>
-        <EntityContainer Name="programacionModelStoreContainer">
-          <EntitySet Name="UserList" EntityType="Self.UserList" Schema="dbo" store:Type="Tables" />
+        <EntityContainer Name="EmpleadosModelStoreContainer">
+          <EntitySet Name="Tbl_empleados" EntityType="Self.Tbl_empleados" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="programacionModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="UserList">
+      <Schema Namespace="EmpleadosModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Tbl_empleados">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="Id_empleado" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="NombreUsuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Edad" Type="Int32" />
-          <Property Name="Pass" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Id_empleado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Empl_nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Empl_apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Empl_DUI" Type="Int32" />
+          <Property Name="Empl_direccion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Empl_tel" Type="Int32" />
+          <Property Name="Empl_email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Empl_cargo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityContainer Name="programacionEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="UserList" EntityType="Self.UserList" />
+        <EntityContainer Name="EmpleadosEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Tbl_empleados" EntityType="Self.Tbl_empleados" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="programacionModelStoreContainer" CdmEntityContainer="programacionEntities">
-          <EntitySetMapping Name="UserList">
-            <EntityTypeMapping TypeName="programacionModel.UserList">
-              <MappingFragment StoreEntitySet="UserList">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="NombreUsuario" ColumnName="NombreUsuario" />
-                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
-                <ScalarProperty Name="Edad" ColumnName="Edad" />
-                <ScalarProperty Name="Pass" ColumnName="Pass" />
+        <EntityContainerMapping StorageEntityContainer="EmpleadosModelStoreContainer" CdmEntityContainer="EmpleadosEntities">
+          <EntitySetMapping Name="Tbl_empleados">
+            <EntityTypeMapping TypeName="EmpleadosModel.Tbl_empleados">
+              <MappingFragment StoreEntitySet="Tbl_empleados">
+                <ScalarProperty Name="Id_empleado" ColumnName="Id_empleado" />
+                <ScalarProperty Name="Empl_nombre" ColumnName="Empl_nombre" />
+                <ScalarProperty Name="Empl_apellido" ColumnName="Empl_apellido" />
+                <ScalarProperty Name="Empl_DUI" ColumnName="Empl_DUI" />
+                <ScalarProperty Name="Empl_direccion" ColumnName="Empl_direccion" />
+                <ScalarProperty Name="Empl_tel" ColumnName="Empl_tel" />
+                <ScalarProperty Name="Empl_email" ColumnName="Empl_email" />
+                <ScalarProperty Name="Empl_cargo" ColumnName="Empl_cargo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
